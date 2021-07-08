@@ -13,9 +13,16 @@ const HDWalletProvider = require("@truffle/hdwallet-provider");
 // and 1 mnumonic can generate many accounts in series
 
 const provider = new HDWalletProvider(
-  "famous crane matrix shift quality employ buyer clinic clay doll consider twenty",
-  "https://rinkeby.infura.io/v3/3f55b6495ac048659afc1881593f34e2"
-);
+  // your 12 mnumonic , 
+  // infura api for any network if deploying using infura
+)
+
+// Example 
+
+// const provider = new HDWalletProvider(
+//   "famous crane matrix shift quality employ buyer clinic test may consider thirty",
+//   "https://rinkeby.infura.io/v3/.............."
+// );
 
 //  Now this provider also takes the node in which we want to deploy our
 // contract so we will use infura.io to do this
