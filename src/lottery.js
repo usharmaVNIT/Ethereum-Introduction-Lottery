@@ -1,7 +1,7 @@
 import web3 from "./web3";
 
 // This is the actual address of the contract deployed in rinkbey test network
-const contractAddress = "0x5E2Fa33D2934383C5CcE436082749e54EfBd7fCc";
+const contractAddress = "";
 // This is the contract abi that will be used to interact with the contract
 const contractAbi = [
   {
