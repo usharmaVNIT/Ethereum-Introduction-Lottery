@@ -1,10 +1,11 @@
 import "./App.css";
+
 import web3 from "./web3";
 
 import lottery from "./lottery";
 import { useEffect, useState } from "react";
 
-function App() {
+function EthereumWebsite() {
   web3.eth.getAccounts().then(console.log);
   const [manager, setManager] = useState("");
   const [players, setPlayers] = useState([]);
@@ -82,6 +83,32 @@ function App() {
       <hr></hr>
 
       <h1>{transactionMessage}</h1>
+    </div>
+  );
+}
+
+function App() {
+  const [isMetamask, setMetamask] = useState(false);
+  const fun = async () => {
+    try {
+      await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      setMetamask(true);
+    } catch (error) {
+      setMetamask(false);
+    }
+  };
+
+  fun();
+
+  return (
+    <div>
+      {isMetamask ? (
+        <EthereumWebsite />
+      ) : (
+        <div>Install Metamask and enable it</div>
+      )}
     </div>
   );
 }
